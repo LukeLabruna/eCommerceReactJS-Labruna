@@ -9,3 +9,9 @@ body {
   background-color:  #383e3c;
   color: #9F8D60;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

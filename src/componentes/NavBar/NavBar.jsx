@@ -1,7 +1,7 @@
 import React from 'react'
-import CartWidget from '../CartWidget/CartWidget'
+import CartWidget from "../CartWidget/CartWidget"
 import "./NavBar.css"
-import imagen from "./logo.png"
+import imagen from "/logo.png"
 
 const NavBar = () => {
   return (
@@ -13,7 +13,6 @@ const NavBar = () => {
       <nav>
         <ul className='categorias'>
           <li>Libros</li>
-          <li>Audio libros</li>
           <li>Peliculas</li>
           <li>Musica</li>
           <li>Merch</li>
