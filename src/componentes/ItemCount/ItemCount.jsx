@@ -2,10 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import "./ItemCount.css"
 
-const ItemCount = ({ inicial, stockInicial }) => {
+const ItemCount = ({ inicial, stock, onAdd }) => {
   const [cantidad, setCantidad] = useState(inicial);
-  const [stock, setStock] = useState(stockInicial)
-
+  
   const handleIncrementar = () => {
     if (cantidad < stock) {
       setCantidad(cantidad + 1)
@@ -17,14 +16,6 @@ const ItemCount = ({ inicial, stockInicial }) => {
     }
   }
 
-  const handleAgregarCarrito = () => {
-    if (stock > 0) {
-      console.log(`Se agrego ${cantidad} al carrito`);
-      setCantidad(inicial);
-      setStock(stock - cantidad)
-    }
-  }
-
   return (
     <div className='ItemCount'>
       <p>Se encuentra disponible {stock} unidades de este producto </p>
@@ -33,7 +24,7 @@ const ItemCount = ({ inicial, stockInicial }) => {
         <p className='cantidadContador'>{cantidad}</p>
         <button className='botonContador' onClick={handleIncrementar}>+</button>
       </div>
-      <button className='botonAgregarCarrito' onClick={handleAgregarCarrito}> Agregar al carrito </button>
+      <button className='botonAgregarCarrito' onClick={() => onAdd(cantidad)}> Agregar al carrito </button>
     </div>
   )
 }

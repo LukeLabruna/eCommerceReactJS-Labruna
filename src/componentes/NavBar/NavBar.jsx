@@ -20,7 +20,7 @@ const NavBar = () => {
           <Link to="/categoria/merch" ><li>Merch</li></Link>
         </ul>
       </nav>
-      <CartWidget />
+      <Link to="/carrito+de+compras"><CartWidget /></Link>
     </header>
   )
 }

@@ -3,6 +3,7 @@ import './App.css'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import NavBar from './componentes/NavBar/NavBar'
 import ItemDetailConteiner from './componentes/ItemDetailContainer/ItemDetailConteiner'
+import Cart from './componentes/Cart/Cart'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={ <ItemListContainer greetings="Bienvenidos al Legendarium de Tolkien"/> } />
           <Route path='/categoria/:categoria' element={ <ItemListContainer /> }/>
           <Route path='/producto/:id' element={ <ItemDetailConteiner/> } />
+          <Route path='/carrito+de+compras' element={ <Cart/> } />
         </Routes>
       </BrowserRouter>
     </>
