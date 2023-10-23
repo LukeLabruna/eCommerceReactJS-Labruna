@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={ <ItemListContainer greetings="Bienvenidos al Legendarium de Tolkien"/> } />
           <Route path='/categoria/:categoria' element={ <ItemListContainer /> }/>
-          <Route path='/item/:id' element={ <ItemDetailConteiner/> } />
+          <Route path='/producto/:id' element={ <ItemDetailConteiner/> } />
         </Routes>
       </BrowserRouter>
     </>

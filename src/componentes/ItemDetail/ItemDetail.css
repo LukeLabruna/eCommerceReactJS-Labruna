@@ -16,7 +16,11 @@
   padding: 2rem;
   justify-content: center;
   gap: 2rem;
-  
+}
+
+.infoDetalle img {
+  width: 50%;
+  object-fit: contain;
 }
 
 .textoDetalle {

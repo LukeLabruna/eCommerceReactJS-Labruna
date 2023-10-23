@@ -8,13 +8,17 @@ header {
   color: black;
 }
 
+header a {
+  text-decoration: none;
+  color: black;
+}
+
 header nav ul {
   display: flex;
   list-style: none;
 }
 
 header nav ul li {
-  cursor: pointer;
   margin: 0 1rem;
   font-family: 'Times New Roman', Times, serif;
 }
