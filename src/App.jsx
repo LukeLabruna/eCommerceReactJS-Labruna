@@ -1,4 +1,4 @@
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import NavBar from './componentes/NavBar/NavBar'
@@ -8,9 +8,14 @@ function App() {
   
   return (
     <>
-      <NavBar />
-      {/* <ItemListContainer greetings="Bienvenidos al Legendarium de Tolkien"/> */}
-      <ItemDetailConteiner />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={ <ItemListContainer greetings="Bienvenidos al Legendarium de Tolkien"/> } />
+          <Route path='/categoria/:categoria' element={ <ItemListContainer /> }/>
+          <Route path='/item/:id' element={ <ItemDetailConteiner/> } />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
