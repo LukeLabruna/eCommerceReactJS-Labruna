@@ -12,15 +12,18 @@ const ItemListContainer = ({ greetings }) => {
   useEffect(() => {
     const productos = categoria ? getProductosByCategory : getProductos;
     productos(categoria)
-      .then(response => { setProductos(response) })
+      .then(response => { 
+        setProductos(response);
+        categoria ? document.title = `J.R.R. Tolkien | ${response[0].categoria.toUpperCase()}` : document.title = "J.R.R. Tolkien | Legendarium" ;
+        })
       .catch(error => { console.log(error) })
   }, [categoria])
 
   return (
-    <>
-      <h2 style={{ textAlign: "center" }}> {categoria ? categoria : greetings} </h2>
-      <ItemList productos={productos}/>
-    </>
+    <main>
+      <h2 style={{ textAlign: "center"}}> {categoria ? categoria : greetings} </h2>
+      <ItemList productos={productos} titulo={categoria ? undefined : <h2>Productos</h2>}/>
+    </main>
 
   )
 }

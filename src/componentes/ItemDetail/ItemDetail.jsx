@@ -4,6 +4,8 @@ import ItemCount from '../ItemCount/ItemCount'
 import "./ItemDetail.css"
 
 const ItemDetail = ({ nombre, precio, img, descripcion, stock }) => {
+  document.title = `J.R.R. Tolkien | ${nombre}`
+
   const [cantidadAlCarrito, setCantidadAlCarrito] = useState(0);
 
   const handleOnAdd = (cantidad) => {
@@ -14,7 +16,7 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock }) => {
 
 
   return (
-    <div className='ItemDetail'>
+    <article className='ItemDetail'>
       <h2>{nombre}</h2>
       <div className='infoDetalle'>
         <img src={img} alt={nombre} />
@@ -33,7 +35,7 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock }) => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 
