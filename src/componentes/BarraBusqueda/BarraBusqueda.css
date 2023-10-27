@@ -1,0 +1,42 @@
+.BarraBusqueda {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.BarraBusqueda input {
+  border: none;
+  color: #9F8D60;;
+  background-color:  #383e3c;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+}
+
+.BarraBusqueda input::placeholder {
+  color: #9F8D60;;
+}
+
+.BarraBusqueda ul {
+  width: 100%;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color:  #f7f7f1;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+.BarraBusqueda ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid;
+  color: #9F8D60;
+  font-family: 'Cinzel', sarif;
+}
+
+.BarraBusqueda ul li span {
+  font-size: 0.7rem;
+}

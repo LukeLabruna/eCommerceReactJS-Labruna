@@ -7,11 +7,19 @@ header {
   padding: 1rem;
   background-color: #f7f7f1;
   color: black;
+  border-bottom: 1px solid  #383e3c;
 }
 
 header a {
   text-decoration: none;
   color: black;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 header nav ul {
