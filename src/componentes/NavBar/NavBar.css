@@ -6,13 +6,12 @@ header {
   justify-content: space-between;
   padding: 1rem;
   background-color: #f7f7f1;
-  color: black;
   border-bottom: 1px solid  #383e3c;
 }
 
 header a {
   text-decoration: none;
-  color: black;
+  color: #9F8D60;
 }
 
 header nav {
@@ -42,6 +41,7 @@ header nav ul li {
 .brand h1 {
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
+  color: black;
 }
 
 .brand img {

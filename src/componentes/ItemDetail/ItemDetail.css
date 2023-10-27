@@ -3,7 +3,6 @@
   background-color:  #f7f7f1;
   margin: 2rem;
   border-radius: 0.5rem;
-  
 }
 
 .ItemDetail h2 {
@@ -20,6 +19,7 @@
 
 .infoDetalle img {
   width: 50%;
+  max-height: 30rem;
   object-fit: contain;
 }
 
@@ -40,4 +40,9 @@
   color: #9F8D60;
   cursor: pointer;
   border-radius: 0.3rem;
+}
+
+.descripcion {
+  max-height: 15rem;
+  overflow: scroll;
 }

@@ -21,7 +21,7 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock }) => {
       <div className='infoDetalle'>
         <img src={img} alt={nombre} />
         <div className='textoDetalle'>
-          <p><strong> Descripcion:</strong> {descripcion} </p>
+          <p className='descripcion'><strong> Descripcion:</strong> {descripcion} </p>
           <p>3 y 6 cuotas sin interes con todas las tarjetas</p>
           <p>10% off con transferencia</p>
           <p><strong>Precio:</strong> ${precio}</p>

@@ -6,7 +6,7 @@ const CartWidget = () => {
   
   return (
     <div className='cartWidget'>
-      <img src={"../CartWidget.svg"} alt="Carrito de compra" />
+      <span className="material-symbols-outlined">shopping_cart</span>
       <p>0</p>
     </div>
   )
