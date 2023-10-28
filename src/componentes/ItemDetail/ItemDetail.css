@@ -46,3 +46,22 @@
   max-height: 15rem;
   overflow: scroll;
 }
+
+@media (width <= 800px) {
+  .infoDetalle{
+    flex-direction: column;
+    padding-top: 0.5rem;
+  }
+.ItemDetail{
+  width: 90%;
+}
+.infoDetalle img {
+  width: 100%;
+}
+.ItemDetail h2 {
+  margin-bottom: 0;
+}
+.textoDetalle {
+  width: 100%;
+}
+}

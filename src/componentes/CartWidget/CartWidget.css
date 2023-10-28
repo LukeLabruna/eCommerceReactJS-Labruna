@@ -4,9 +4,11 @@
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  width: 272px;
+  margin-right: 2rem;
 }
 
-.cartWidget img {
-  height: 1.5rem;
+@media (width <= 800px) {
+  .cartWidget{
+    margin: 0;
+  }
 }

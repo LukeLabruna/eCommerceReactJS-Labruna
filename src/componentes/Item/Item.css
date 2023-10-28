@@ -30,3 +30,9 @@
   cursor: pointer;
   border-radius: 0.3rem;
 }
+
+@media (width <= 800px) {
+  .Item{
+    width: 100%;
+  }
+}
