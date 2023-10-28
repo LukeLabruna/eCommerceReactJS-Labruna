@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 export const CarritoContext = createContext({
   carrito: [],
@@ -6,7 +6,7 @@ export const CarritoContext = createContext({
   cantidadTotal: 0
 });
 
-const CarritoProvider = ({ children }) => {
+export const CarritoProvider = ({ children }) => {
 
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
@@ -54,5 +54,3 @@ const CarritoProvider = ({ children }) => {
     </CarritoContext.Provider>
   )
 }
-
-export default CarritoProvider
