@@ -21,10 +21,11 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock }) => {
       <div className='infoDetalle'>
         <img src={img} alt={nombre} />
         <div className='textoDetalle'>
-          <p className='descripcion'><strong> Descripcion:</strong> {descripcion} </p>
-          <p>3 y 6 cuotas sin interes con todas las tarjetas</p>
-          <p>10% off con transferencia</p>
-          <p><strong>Precio:</strong> ${precio}</p>
+          <p className='precio'><strong>Precio:</strong> ${precio}</p>
+          <div className='cuotas'>
+            <p>3 y 6 cuotas sin interes con todas las tarjetas</p>
+            <p>10% off con transferencia</p>
+          </div>
           <div>
             {cantidadAlCarrito > 0
               ? <Link to="/carrito+de+compras"> <button className='botonFinalizarCompra'> Finalizar Compra </button> </Link>
@@ -33,6 +34,7 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock }) => {
                 : <p>El producto no se encuentra disponible.</p>)
             }
           </div>
+          <p className='descripcion'><strong> Descripcion:</strong> {descripcion} </p>
         </div>
       </div>
     </article>
