@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react"
 import CartWidget from "../CartWidget/CartWidget"
 import BarraBusqueda from '../BarraBusqueda/BarraBusqueda'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import "./NavBar.css"
 
 const NavBar = () => {
   const [mostrarMenu, setMostrarMenu] = useState(false)
   const menuRef = useRef(null);
+  const location = useLocation()
 
   useEffect(() => {
     const handleClickAfuera = (e) => {
@@ -27,6 +28,10 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect (() => {
+    setMostrarMenu(false)
+  }, [location.pathname])
 
   const handleOnClickMenu = (e) => {
     e.stopPropagation();
