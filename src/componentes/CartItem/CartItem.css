@@ -1,0 +1,35 @@
+.CartItem {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-around;
+  text-align: center;
+  border-bottom: 1px solid;
+  padding: 1rem;
+}
+.CartItem:first-child{
+  border-top: 1px solid;
+}
+
+.CartItem img {
+  height: 5rem;
+  object-fit: contain;
+}
+
+.CartItem h2 {
+  font-size: 1.5rem;
+  max-width: 12rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.CartItem p {
+  font-size: 1.2rem;
+}
+
+.CartItem > * {
+  width: 12rem;
+}

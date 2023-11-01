@@ -1,0 +1,24 @@
+.CarritoCompras {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.CarritoCompras button {
+  background-color: #f7f7f1;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  color: #9F8D60;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
+.vaciarFinalizar {
+  display: flex;
+  gap: 1rem;
+}
+
+.vaciarFinalizar button {
+  width: 10rem;
+}
