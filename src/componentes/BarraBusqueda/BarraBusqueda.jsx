@@ -1,19 +1,30 @@
 import { useState, useEffect, useRef } from "react";
-import { getProductos } from "../../asyncmock";
 import { Link, useLocation } from "react-router-dom";
 import "./BarraBusqueda.css";
+import { db } from '../../services/config'
+import { collection, getDocs} from 'firebase/firestore'
 
 const BarraBusqueda = () => {
-  useEffect(() => {
-    getProductos()
-    .then(response => setProductos(response))
-  }, [])
-
   const [busqueda, setBusqueda] = useState("");
   const [productos, setProductos] = useState([]);
   const [mostrarResultados, setMostrarResultados] = useState(false);
   const containerBusquedaRef = useRef(null);
   const location = useLocation()
+
+  useEffect(() => {
+    const misProductos = collection(db, "inventario");
+
+    getDocs(misProductos)
+      .then(response => {
+        const nuevosProductos = response.docs.map(doc => {
+          const data = doc.data()
+          return {id: doc.id, ...data}
+        })
+        setProductos(nuevosProductos)
+      })
+      .catch(error => console.log("Se produjo el error", error))
+  }, [])
+
 
   const filtroDeProductos = productos.filter((item) =>
     item.nombre?.toLowerCase().includes(busqueda?.toLowerCase())

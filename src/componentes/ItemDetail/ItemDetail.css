@@ -59,6 +59,12 @@
   overflow: scroll;
 }
 
+@media (width <= 1000px) {
+  .ItemDetail{
+    width: 95%;
+  }
+}
+
 @media (width <= 800px) {
   .infoDetalle{
     flex-direction: column;

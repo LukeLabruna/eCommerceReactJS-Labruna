@@ -1,22 +1,29 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { getProductos, getProductosByCategory } from '../../asyncmock'
 import { useParams } from 'react-router-dom'
 import "./ItemListContainer.css"
 import ItemList from '../ItemList/ItemList'
+import { db } from '../../services/config'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({ greetings }) => {
   const [productos, setProductos] = useState([]);
   const {categoria} = useParams();
 
   useEffect(() => {
-    const productos = categoria ? getProductosByCategory : getProductos;
-    productos(categoria)
-      .then(response => { 
-        setProductos(response);
-        categoria ? document.title = `J.R.R. Tolkien | ${response[0].categoria.toUpperCase()}` : document.title = "J.R.R. Tolkien | Legendarium" ;
+    const misProductos = categoria 
+                          ? query(collection(db, "inventario"), where("categoria", "==", categoria)) 
+                          : collection(db, "inventario");
+
+    getDocs(misProductos)
+      .then(response => {
+        const nuevosProductos = response.docs.map(doc => {
+          const data = doc.data()
+          return {id: doc.id, ...data}
         })
-      .catch(error => { console.log(error) })
+        setProductos(nuevosProductos)
+      })
+      .catch(error => console.log("Se produjo el error", error))
   }, [categoria])
 
   return (
