@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { CarritoContext } from "../../context/CarritoContex"
-import ItemCartCount from "../ItemCartCount/itemCartCount"
+import ItemCartCount from "../ItemCartCount/ItemCartCount"
 import "./CartItem.css"
 
 const CartItem = ({item, cantidad}) => {
