@@ -15,7 +15,6 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock, id }) => {
     setCantidadAlCarrito(cantidad)
     const item = {id, nombre, precio, img};
     agregarAlCarrito(item, cantidad);
-    console.log(`Se agrego ${cantidad} del producto ${nombre}`);
   }
 
 
