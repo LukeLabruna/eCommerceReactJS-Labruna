@@ -1,3 +1,3 @@
 # Proyecto de eCommerce en ReactJS para CoderHouse
 
-Deploy https://pre-entrega2-labruna.vercel.app/
+Deploy https://e-commerce-react-js-labruna.vercel.app
