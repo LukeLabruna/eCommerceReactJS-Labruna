@@ -6,7 +6,7 @@ import ItemList from '../ItemList/ItemList'
 import { db } from '../../services/config'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 
-const ItemListContainer = ({ greetings }) => {
+const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const {categoria} = useParams();
 
@@ -28,7 +28,7 @@ const ItemListContainer = ({ greetings }) => {
 
   return (
     <main>
-      <h2 style={{ textAlign: "center"}}> {categoria ? categoria : greetings} </h2>
+       {categoria ? <h2 style={{ textAlign: "center"}}> {categoria} </h2> : undefined} 
       <ItemList productos={productos} titulo={categoria ? undefined : <h2>Productos</h2>}/>
     </main>
 

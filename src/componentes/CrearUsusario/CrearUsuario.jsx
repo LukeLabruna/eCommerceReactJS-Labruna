@@ -1,92 +1,68 @@
-import { useState, useContext } from "react"
-import { db } from "../../services/config"
-import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore"
-import { CarritoContext } from "../../context/CarritoContex"
-import "./Checkout.css"
+import { auth, db } from "../../services/config"
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { setDoc, doc } from "firebase/firestore"
+import { useState } from "react"
+import "./CrearUsuario.css"
 
-const Checkout = () => {
-  document.title = `J.R.R. Tolkien | Checkout`
-  const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext)
+const CrearUsuario = () => {
 
   const [nombre, setNombre] = useState(null)
   const [apellido, setApellido] = useState(null)
   const [telefono, setTelefono] = useState(null)
+  const [password, setPassword] = useState(null)
+  const [confirmacionPassword, setConfirmacionPassword] = useState(null)
   const [email, setEmail] = useState(null)
   const [confirmacionEmail, setConfirmacionEmail] = useState(null)
   const [direccion, setDireccion] = useState(null)
   const [localidad, setLocalidad] = useState(null)
   const [codigoPostal, setCodigoPostal] = useState(null)
-  const [ordenId, setOrdenId] = useState(null)
+
   const [errorVacio, setErrorVacio] = useState(null)
   const [errorEmail, setErrorEmail] = useState(null)
+  const [errorPassword, setErrorPassword] = useState(null)
 
-
-  const handleSubmit = (e) => {
+  const crearUsuario = async (e) => {
     e.preventDefault()
 
-    if (!nombre || !apellido || !email || !confirmacionEmail || !direccion || !localidad || !codigoPostal) {
-      setErrorVacio("El campo esta vacio")
+    if (!nombre || !apellido || !email || !confirmacionEmail || !direccion || !localidad || !codigoPostal || !password || !confirmacionPassword) {
+      setErrorVacio("El campo esta vacio!")
       return;
     }
 
     if (email !== confirmacionEmail) {
-      setErrorEmail("Los Campos no coinciden")
+      setErrorEmail("El email no coinciden!")
       return;
     }
 
-    const nuevaOrden = {
-      productos: carrito.map(producto => ({
-        id: producto.item.id,
-        categoria: producto.item.categoria,
-        nombre: producto.item.nombre,
-        cantidad: producto.cantidad,
-        precio: producto.item.precio,
-        subtotal: producto.cantidad * producto.item.precio
-      })),
-      total: `$${total}`,
-      cantidadDeProductos: cantidadTotal,
+    if (password !== confirmacionPassword) {
+      setErrorPassword("La contraseña no coinciden!")
+      return;
+    }
+
+    const nuevoUsuario = {
       nombre,
       apellido,
       email,
-      datosDeEntrega: { direccion, localidad, codigoPostal },
-      fechaDeCompra: new Date(),
+      telefono,
+      direccion: {
+        direccion,
+        localidad,
+        codigoPostal
+      },
     }
-    
 
-    Promise.all(
-      nuevaOrden.productos.map( async (item) => {
-        const productoRef = doc(db, "inventario", `${item.id}`);
-        const productoDoc = await getDoc(productoRef);
-        const stockActual = productoDoc.data().stock;
-        await updateDoc(productoRef, { stock: stockActual - item.cantidad })
-      })
-    )
-      .then(() => {
-        addDoc(collection(db, "ordenes"), nuevaOrden)
-          .then(docRef => {
-            setOrdenId(docRef.id);
-            vaciarCarrito();
-          })
-          .catch(error => console.log(error))
-      }
-      )
+
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((response) => { setDoc(doc(db, "usuarios", `${response.user.uid}`), nuevoUsuario) })
       .catch(error => console.log(error))
 
   }
 
-  if (ordenId) {
-    return (
-      <main>
-        <h2>Checkout</h2>
-        <h3> Su referencia de compra es {ordenId} </h3>
-      </main>
-    )
-  }
   return (
-    <main className='Checkout'>
-      <h2>Checkout</h2>
-      <form onSubmit={handleSubmit}>
-        <h3>Datos para la confirmacion del pedido</h3>
+    <main className='CrearUsuario'>
+      <h2>Crear Usuario</h2>
+      <form onSubmit={crearUsuario}>
+        <h3>Datos para crear un nuevo usuario</h3>
 
         <div>
           <label htmlFor="nombre">Nombre: </label>
@@ -121,6 +97,20 @@ const Checkout = () => {
         </div>
 
         <div>
+          <label htmlFor="password">Contraseña: </label>
+          <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} />
+          {password !== confirmacionPassword ? <p>{errorPassword}</p> : ""}
+          {!password ? <p>{errorVacio}</p> : ""}
+        </div>
+
+        <div>
+          <label htmlFor="confirmacionPassword">Confirmar contraseña: </label>
+          <input type="password" id="confirmacionPassword" onChange={(e) => setConfirmacionPassword(e.target.value)} />
+          {password !== confirmacionPassword ? <p>{errorPassword}</p> : ""}
+          {!confirmacionPassword ? <p>{errorVacio}</p> : ""}
+        </div>
+
+        <div>
           <label htmlFor="direccion">Direccion: </label>
           <input type="text" id="direccion" onChange={(e) => setDireccion(e.target.value)} />
           {!direccion ? <p>{errorVacio}</p> : ""}
@@ -138,10 +128,10 @@ const Checkout = () => {
           {!codigoPostal ? <p>{errorVacio}</p> : ""}
         </div>
 
-        <button type="submit">Confirmar Pedido</button>
+        <button type="submit">Crear Usuario</button>
       </form>
     </main>
   )
 }
 
-export default Checkout
+export default CrearUsuario

@@ -50,10 +50,11 @@ const NavBar = () => {
       <div className={`gridNav${mostrarMenu ? " mostrar" : ""}`} ref={menuRef}>
         <nav className={`categoria`}>
           <ul className='categorias'>
-            <Link to="/categoria/libros" ><li>Libros</li></Link>
-            <Link to="/categoria/peliculas" ><li>Peliculas</li></Link>
-            <Link to="/categoria/musica" ><li>Musica</li></Link>
-            <Link to="/categoria/merch" ><li>Merch</li></Link>
+            <Link to="/productos"><li>Productos</li></Link>
+            <Link to="/productos/libros" ><li>Libros</li></Link>
+            <Link to="/productos/peliculas" ><li>Peliculas</li></Link>
+            <Link to="/productos/musica" ><li>Musica</li></Link>
+            <Link to="/productos/merch" ><li>Merch</li></Link>
           </ul>
           <BarraBusqueda />
         </nav>

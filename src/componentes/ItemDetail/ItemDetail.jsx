@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import { CarritoContext } from '../../context/CarritoContex'
 import "./ItemDetail.css"
 
-const ItemDetail = ({ nombre, precio, img, descripcion, stock, id }) => {
+const ItemDetail = ({ nombre, precio, img, descripcion, stock, id, categoria }) => {
   document.title = `J.R.R. Tolkien | ${nombre}`
 
   const [cantidadAlCarrito, setCantidadAlCarrito] = useState(0);
@@ -13,7 +13,7 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock, id }) => {
 
   const handleOnAdd = (cantidad) => {
     setCantidadAlCarrito(cantidad)
-    const item = {id, nombre, precio, img};
+    const item = {id, nombre, precio, img, categoria};
     agregarAlCarrito(item, cantidad);
   }
 

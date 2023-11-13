@@ -23,7 +23,7 @@
 }
 
 .Item button {
-  background-color: #383e3c;
+  background-color: #383e3c !important;
   padding: 0.5rem 1.5rem;
   border: none;
   color: #9F8D60;
