@@ -1,0 +1,14 @@
+.IniciarCerrarSesion {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.IniciarCerrarSesion button{
+  background-color: #383e3c ;
+  padding: 0.5rem 0.5rem ;
+  border: none ;
+  color: #9F8D60 ;
+  cursor: pointer ;
+  border-radius: 0.3rem ;
+}

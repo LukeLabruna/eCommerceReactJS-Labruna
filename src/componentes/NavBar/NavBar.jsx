@@ -3,6 +3,7 @@ import CartWidget from "../CartWidget/CartWidget"
 import BarraBusqueda from '../BarraBusqueda/BarraBusqueda'
 import { Link, useLocation } from 'react-router-dom'
 import "./NavBar.css"
+import IniciarCerrarSesion from "../IniciarCerrarSesion/IniciarCerrarSesion"
 
 const NavBar = () => {
   const [mostrarMenu, setMostrarMenu] = useState(false)
@@ -17,7 +18,7 @@ const NavBar = () => {
     }
 
     const handleScroll = () => {
-      setMostrarMenu(false); // Cierra el menú al hacer scroll
+      setMostrarMenu(false);
     }
 
     document.addEventListener("click", handleClickAfuera);
@@ -29,7 +30,7 @@ const NavBar = () => {
     };
   }, []);
 
-  useEffect (() => {
+  useEffect(() => {
     setMostrarMenu(false)
   }, [location.pathname])
 
@@ -58,7 +59,11 @@ const NavBar = () => {
           </ul>
           <BarraBusqueda />
         </nav>
-        <Link to="/carrito+de+compras" className={`carrito`}><CartWidget /></Link>
+        <div>
+          <IniciarCerrarSesion/>
+          <Link to="/carrito+de+compras" className={`carrito`}><CartWidget /></Link>
+        </div>
+
       </div>
     </header>
   )

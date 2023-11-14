@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  margin-right: 2rem;
+  
 }
 
 @media (width <= 800px) {

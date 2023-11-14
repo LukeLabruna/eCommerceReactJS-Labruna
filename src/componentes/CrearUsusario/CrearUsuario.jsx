@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth"
 import { setDoc, doc } from "firebase/firestore"
 import { useState } from "react"
 import "./CrearUsuario.css"
+import { useNavigate } from "react-router-dom"
 
 const CrearUsuario = () => {
 
@@ -20,6 +21,8 @@ const CrearUsuario = () => {
   const [errorVacio, setErrorVacio] = useState(null)
   const [errorEmail, setErrorEmail] = useState(null)
   const [errorPassword, setErrorPassword] = useState(null)
+
+  const navigate = useNavigate()
 
   const crearUsuario = async (e) => {
     e.preventDefault()
@@ -53,7 +56,10 @@ const CrearUsuario = () => {
 
 
     await createUserWithEmailAndPassword(auth, email, password)
-      .then((response) => { setDoc(doc(db, "usuarios", `${response.user.uid}`), nuevoUsuario) })
+      .then((response) => { 
+        setDoc(doc(db, "usuarios", `${response.user.uid}`), nuevoUsuario)
+        navigate(-1)
+      })
       .catch(error => console.log(error))
 
   }

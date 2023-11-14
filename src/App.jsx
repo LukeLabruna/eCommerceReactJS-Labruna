@@ -9,6 +9,7 @@ import Checkout from './componentes/Checkout/Checkout'
 import Login from './componentes/Login/Login'
 import CrearUsuario from './componentes/CrearUsusario/CrearUsuario'
 import Home from './componentes/Home/Home'
+import FinalizarCompra from './componentes/FinalizarCompra/FinalizarCompra'
 
 function App() {
 
