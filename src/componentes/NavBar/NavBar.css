@@ -75,6 +75,10 @@ header nav ul li {
 
 @media (width <= 800px) {
 
+  header nav ul li {
+    margin: 0 0.5rem;
+  }
+
   .menu{
     display: block;
     cursor: pointer;

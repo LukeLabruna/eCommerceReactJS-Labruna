@@ -60,4 +60,5 @@ footer h3 {
 footer p {
   display: flex;
   align-items: center;
+  text-align: center;
 }

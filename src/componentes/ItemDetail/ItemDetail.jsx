@@ -32,7 +32,10 @@ const ItemDetail = ({ nombre, precio, img, descripcion, stock, id, categoria }) 
           </div>
           <div>
             {cantidadAlCarrito > 0
-              ? <Link to="/carrito+de+compras"> <button className='botonFinalizarCompra'> Finalizar Compra </button> </Link>
+              ? (<>
+                 <Link to="/carrito+de+compras"> <button className='botonFinalizarCompra'> Finalizar Compra </button> </Link>
+                 <Link to="/productos"> <button className='botonFinalizarCompra'> Seguir Comprando </button> </Link>
+                </>)
               : (stock > 0
                 ? <ItemCount inicial={1} stock={stock} onAdd={handleOnAdd} />
                 : <p>El producto no se encuentra disponible.</p>)
