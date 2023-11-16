@@ -1,5 +1,5 @@
 # E-Commerce J.R.R. Tolkien 
-Este es un proyecto de ecommerce básico que se utiliza para el curso de React. La aplicación permite ver una lista de productos sobre el universo creado por Tolkien y realizar compras en línea. Los productos y las órdenes de compra se almacenan en Firebase.
+Este es un proyecto de ecommerce básico que se utiliza para el curso de React. La aplicación permite ver una lista de productos sobre el universo creado por Tolkien y realizar compras en línea. Los usuarios, productos y las órdenes de compra se almacenan en Firebase.
 
 ## Deploy 
 - https://e-commerce-react-js-labruna.vercel.app
