@@ -48,7 +48,7 @@
   margin-top: 2rem;
 }
 
-@media (width < 1350px) {
+@media (width < 1365px) {
   .introduccion{
     flex-direction: column;
     height: auto;
