@@ -1,0 +1,63 @@
+footer {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f7f7f1;
+  gap: 2rem;
+  min-height: 20rem;
+  padding: 2rem;
+  justify-content: space-evenly;
+}
+
+footer a {
+  text-decoration: none;
+  color: #9F8D60;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerBrand {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Cinzel";
+  border-bottom: #9F8D60 solid 1px;
+}
+
+.footerBrand img {
+  height: 5rem;
+}
+
+.footerBrand h2 {
+  color: black;
+}
+
+.footerCopyright {
+  width: 100%;
+  align-items: center;
+}
+
+.footerRedes {
+  flex-direction: row;
+  gap: 3rem;
+  width: 100%;
+  justify-content: center;
+  border-top: #9F8D60 solid 1px;
+  border-bottom: #9F8D60 solid 1px;
+  padding: 1rem 0;
+}
+
+footer h3 {
+  margin-bottom: 1rem;
+  font-weight: lighter;
+}
+
+footer p {
+  display: flex;
+  align-items: center;
+}

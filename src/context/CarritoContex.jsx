@@ -60,22 +60,13 @@ export const CarritoProvider = ({ children }) => {
   }
 
   const vaciarCarrito = () => {
-    MySwal.fire({
-      position: "center",
-      icon: "warning",
-      title: "Desea vaciar el carrito?",
-      showConfirmButton: true,
-      showDenyButton: true,
-      background: "#f7f7f1",
-      color: "#9F8D60",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setCarrito([]);
-        setCantidadTotal(0);
-        setTotal(0);
-      }
-    });
+
+    setCarrito([]);
+    setCantidadTotal(0);
+    setTotal(0);
+
   }
+
 
   const actualizarCantidad = (id, nuevaCantidad) => {
     const carritoActualizado = carrito.map((prod) => {

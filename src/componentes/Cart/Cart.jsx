@@ -3,10 +3,8 @@ import { CarritoContext } from "../../context/CarritoContex"
 import { Link } from "react-router-dom"
 import CartItem from "../CartItem/CartItem"
 import "./Cart.css"
-import { auth, db } from "../../services/config"
-import { onAuthStateChanged } from "firebase/auth"
-import { doc, getDoc } from "firebase/firestore"
-import FinalizarCompra from "../FinalizarCompra/FinalizarCompra"
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 
 
@@ -15,8 +13,23 @@ const Cart = () => {
   document.title = "J.R.R. Tolkien | Carrito"
 
   const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext)
+  const MySwal = withReactContent(Swal)
   
-  
+  const handleVaciarCarrito = () => {
+    MySwal.fire({
+      position: "center",
+      icon: "warning",
+      title: "Desea vaciar el carrito?",
+      showConfirmButton: true,
+      showDenyButton: true,
+      background: "#f7f7f1",
+      color: "#9F8D60",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        vaciarCarrito()
+      }
+    });
+  }
 
   if (cantidadTotal === 0) {
     return (
@@ -34,7 +47,7 @@ const Cart = () => {
         <h3>Total: ${total}</h3>
         <h3>Cantidad Total: {cantidadTotal} </h3>
         <div className="vaciarFinalizar">
-          <button onClick={() => vaciarCarrito()} > Vaciar Carrito </button>
+          <button onClick={() => handleVaciarCarrito()} > Vaciar Carrito </button>
           <Link to="/checkout"><button>Confirmar Compra</button></Link>
         </div>
       </div>

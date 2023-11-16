@@ -6,6 +6,7 @@ import "./CrearUsuario.css"
 import { useNavigate } from "react-router-dom"
 
 const CrearUsuario = () => {
+  document.title = "J.R.R. Tolkien | Crear Usuario"
 
   const [nombre, setNombre] = useState(null)
   const [apellido, setApellido] = useState(null)

@@ -9,7 +9,7 @@ import Checkout from './componentes/Checkout/Checkout'
 import Login from './componentes/Login/Login'
 import CrearUsuario from './componentes/CrearUsusario/CrearUsuario'
 import Home from './componentes/Home/Home'
-import FinalizarCompra from './componentes/FinalizarCompra/FinalizarCompra'
+import Footer from './componentes/Footer/Footer'
 
 function App() {
 
@@ -29,6 +29,7 @@ function App() {
             <Route path='/crear+usuario' element={<CrearUsuario/>}/>
             <Route path='*' element={<main><h2>Error 404</h2></main>} />
           </Routes>
+          <Footer />
         </CarritoProvider>
       </BrowserRouter>
     </>
