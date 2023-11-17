@@ -15,10 +15,13 @@
   border-radius: 0.2rem;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color:  #383e3c;
   color: #9F8D60;
-  overflow-x: hidden;
   
 }
 
