@@ -12,6 +12,7 @@ footer {
 footer a {
   text-decoration: none;
   color: #9F8D60;
+  width: 100%;
 }
 
 footer div {
@@ -61,4 +62,29 @@ footer p {
   display: flex;
   align-items: center;
   text-align: center;
+}
+
+@media (width < 800px) {
+  footer{
+    min-height: 0;
+    gap: 1rem;
+  }
+  .footerContactanos {
+    display: none;
+  }
+  .footerProductos {
+    display: none;
+  }
+  .footerBusqueda {
+    display: none;
+  }
+  .footterUsuario {
+    display: none;
+  }
+  .footerBrand {
+    display: none;
+  }
+  .footerRedes{
+    border-top: none;
+  }
 }

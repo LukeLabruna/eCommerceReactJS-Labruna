@@ -1,6 +1,8 @@
 import { useState, createContext } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const CarritoContext = createContext({
   carrito: [],
@@ -9,6 +11,15 @@ export const CarritoContext = createContext({
 });
 
 export const CarritoProvider = ({ children }) => {
+
+  
+const location = useLocation()
+
+  useEffect(() => {
+    
+      window.scrollTo(0, 0);
+    
+  }, [location.pathname]);
 
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);

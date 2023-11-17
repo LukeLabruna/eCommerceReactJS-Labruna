@@ -1,7 +1,7 @@
 header {
   width: 100%;
   display: flex;
-  position: fixed;
+  
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
@@ -74,6 +74,10 @@ header nav ul li {
 }
 
 @media (width <= 800px) {
+
+  header {
+    position: fixed;
+  }
 
   header nav ul li {
     margin: 0 0.5rem;
