@@ -66,8 +66,8 @@ footer p {
 
 .top {
   position: fixed;
-    right: 0.5rem;
-    bottom: 0.5rem;
+    right: 0.8rem;
+    bottom: 0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
