@@ -64,7 +64,21 @@ footer p {
   text-align: center;
 }
 
+.top {
+  position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #9F8D60 solid 2px;
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 @media (width < 800px) {
+
   footer{
     min-height: 0;
     gap: 1rem;
