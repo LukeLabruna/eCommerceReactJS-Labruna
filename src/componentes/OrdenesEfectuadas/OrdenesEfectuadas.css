@@ -1,0 +1,30 @@
+.OrdenesEfectuadas form input, .OrdenesEfectuadas form button  {
+  padding: 0.5rem;
+}
+
+.OrdenesEfectuadas form input {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: none;
+  color: #9F8D60;
+}
+
+.OrdenesEfectuadas form input:focus {
+  outline: none;
+}
+
+.OrdenesEfectuadas form button {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border: none;
+  background-color: #9F8D60;
+  color:  #383e3c;
+}
+
+.OrdenesEfectuadas form {
+  margin-bottom: 2rem;
+}
+
+.OrdenesEfectuadas .ordenCompra {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

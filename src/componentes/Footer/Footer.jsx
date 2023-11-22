@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <>
     <div className="top" onClick={handleClick}>
-    <i class="fa-solid fa-angles-up"></i>
+    <i className="fa-solid fa-angles-up"></i>
     <p>Top</p>
     </div>
       <footer>
@@ -24,8 +24,9 @@ const Footer = () => {
         <div className="footerContactanos">
           <h3>Contactanos</h3>
           <p>Atencion al cliente de lunes a viernes de 8 a 20 hs</p>
-          <p><span class="material-symbols-outlined">mail</span> ejemplo@ejemplo.com</p>
-          <p><span class="material-symbols-outlined">call</span> 1234567890</p>
+          <p><span className="material-symbols-outlined">mail</span> ejemplo@ejemplo.com</p>
+          <p><span className="material-symbols-outlined">call</span> 1234567890</p>
+          <Link to="/ordenes+efectuadas"> <p className="subrayado">Busca tu orden aca</p></Link>
         </div>
         <div className="footerProductos">
           <h3>Productos</h3>
@@ -41,17 +42,17 @@ const Footer = () => {
         </div>
         <div className="footterUsuario">
           <h3>Usuarios</h3>
-          <Link to="/login">Iniciar sesion</Link>
-          <Link to="/crar+usuario">Crear Usuario</Link>
+          <Link to="/login" className="subrayado">Iniciar sesion</Link>
+          <Link to="/crar+usuario" className="subrayado">Crear Usuario</Link>
         </div>
         <div className="footerRedes">
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-x-twitter"></i>
-          <i class="fa-brands fa-tiktok"></i>
+          <i className="fa-brands fa-instagram"></i>
+          <i className="fa-brands fa-facebook"></i>
+          <i className="fa-brands fa-x-twitter"></i>
+          <i className="fa-brands fa-tiktok"></i>
         </div>
         <div className="footerCopyright">
-          <p>J.R.R. Tolkien <i class="fa-regular fa-copyright"></i> 2023. Todos los derechos reservados.</p>
+          <p>J.R.R. Tolkien <i className="fa-regular fa-copyright"></i> 2023. Todos los derechos reservados.</p>
         </div>
       </footer>
     </>
